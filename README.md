@@ -1,7 +1,7 @@
 
 # Internship Management System
 
-A Web-Based Internship Management System built to streamline and enhance the internship experience for students, employers, and university administrators. Developed by **Group-O** at Sabaragamuwa University of Sri Lanka.
+A Web-Based Internship Management System built to streamline and enhance the internship experience for students, employers, and university administrators. 
 
 ## 🔍 Project Overview
 
