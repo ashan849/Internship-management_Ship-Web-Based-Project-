@@ -1,0 +1,261 @@
+<?php
+session_start();
+
+// Check if the user is logged in
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+    // Log the user out by destroying the session
+    session_destroy();
+
+    // Redirect to the login page or any other appropriate page
+    header('Location: login.php'); // Replace 'login.php' with your login page URL
+    exit();
+}
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Internship Management System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" >
+    
+
+    
+    
+    
+
+ <style> 
+
+body{
+    width: 100%;
+    margin:0;
+    padding: 0;
+}
+header {
+background-color: #520103;
+color: white;
+
+height: 50px;
+
+/* display: block; */
+background-position: center top;
+padding-top: 0%;
+
+}
+footer{
+    text-align: center;
+    background-color: #520103;
+    height: 100px;
+    padding-top: 25px;
+    color: white;
+}
+
+
+.home,.about,.login{
+display: inline-block;
+margin-right: 50px;
+}
+
+
+.list{
+display: block;
+float: right;
+margin-top: 10px;
+font-size: 20px;
+display: inline-block;
+margin-right:0px;
+
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+
+
+}
+.home:hover,.login:hover{
+opacity: 0.5;
+
+
+}
+a {
+color:white;
+text-decoration: none;
+-webkit-text-stroke-color: 5px #520103;
+}
+p{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.img{
+   width: 150px;
+   margin-left: 20px;
+   display:inline-block; 
+}
+.img-div{
+    float: left;
+    margin-top: 20px;
+    display:inline-block;
+    margin: left 50px; 
+    object-fit:contain;
+}
+h1{
+    display: inline-block;
+    color:#520103;
+    margin-top:50px;
+    Margin-left:5px;
+    font-size:35px;
+    font-family: 'Times New Roman', Times, serif;
+   
+}
+h2{
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+}
+#home{
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    height: 700px;
+    display:block;
+}
+
+
+.topic{
+    display:block;
+    margin-top:0px;
+    padding-top:0%;
+    background-color: white;
+}
+.h{
+    display:inline-block;
+}
+.img-box{
+background-image: url("../IMS/assets/header.jpg");
+background-repeat: no-repeat;
+background-size: cover;
+width: auto;
+height: 600px;
+margin-top: 80px;
+}
+
+.descr{
+    text-align: center;
+}
+
+
+
+
+#home,#about{
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    height: 300px;
+}
+
+   
+
+#students{
+    color: rgb(0, 0, 0);
+    display: inline-block;
+     
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+  
+    width: 450px;
+    height: 700px;
+    
+}
+#companies
+{
+    display: inline-block;
+   
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    width: 500px;
+    height: 700px;
+
+}
+#admin{
+    display: inline-block;
+    text-align: center;
+   
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    width: 450px;
+    height: 700px;
+}
+.contact{
+    float:left;
+    display: inline-block;
+    margin-left:50px;
+
+}
+</style>  
+
+
+
+</head>
+<body>
+    <header >
+       
+        <!-- Navigation Bar -->
+      <div class="img-div"> <img class="img" src="../IMS/assets/Logo-SUSL.png"></div>
+     <div class="h"> <h1>Sabaragamuwa University of Sri Lanka<br>Internship Management System(IMS)</h1></div>
+    
+   
+               <div class="list"><div class ="home"> <a href="#home">&#8962 Home</a></div>
+                <!-- <div class="about"><a href="../IMS/templates/aboutus.php">About</a></div>
+                <div class="contact"><a href="../IMS/templates/contactus.php">Contact</a></div> -->
+                <div class="login"><a href="../IMS/templates/login.php">Login</a></div></div>
+            
+                
+    </header>
+    <main>
+        <div class="img-box"> </div>
+        <h2>Welcome to the Sabaragamuwa University Internship Management System</h2>
+        <div class="descr"><p>Connecting students with opportunities</p></div>
+        <section id="home">
+        
+       
+        </section>
+
+        <section id="about">
+        <!-- Detailed Information about the System -->
+        <h2>About the System</h2>
+        <p>Information on how this system helps students, companies, and the university.</p>
+    </section>
+
+    <!-- Separate Sections for Students, Companies, and Admin -->
+    <section id="students">
+        <h3>For Students</h3>
+        <p>Details on how students can register, <br>log in, view profiles, and apply.</p>
+    </section>
+
+    <section id="companies">
+        <h3>For Companies</h3>
+        <p>Guide for companies on account setup, portfolio display, and internship posting.</p>
+    </section>
+
+    <section id="admin">
+        <h3>For University Administration</h3>
+        <p>Overview of administrative controls and functionalities.</p>
+    </section>
+   
+<!--
+    <section id="contact">
+        Contact Form or Information -->
+        <!-- <h2>Contact Us</h2> -->
+        <!-- <p>Get in touch with us for more information.</p> -->
+    <!-- </section>--> 
+    </main>
+    <footer>
+      <div class="contact">Contact US<br>ims19ges@gmail.com<br>+94123456789</div>
+      <div style="display:inline-block; margin-right:100px;" > &copy; 2024 University Internship Management System SUSL. All rights reserved.</div>
+    </footer>
+
+    <!-- JavaScript files linked here -->
+    <!-- <script src="scripts/menu.js"></script>
+<script src="scripts/formHandler.js"></script>
+<script src="scripts/profileLoader.js"></script> -->
+
+</body>
+</html>
